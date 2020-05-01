@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebPlatform.Data\WebPlatform.Data.csproj" />
+    <ProjectReference Include="..\WebPlatform.Entities\WebPlatform.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewData["Title"] = "Maestro Empleado";
+}
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            <div class="input-group col-md-12">
+                <div class="col-md-6">
+                    <h1>Empleado</h1>
+                </div>
+                <div class="col-md-6" align="right">
+                    <a class="btn btn-primary" style="color:white" id="btnNewEmployee">
+                        Crear nuevo empleado
+                    </a>
+                </div>
+            </div>
+            <hr />
+            <div class="col-md-12">
+                <span>Maestro de búsqueda, creación y actualización de <strong><em>Empleado</em></strong>.</span>
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title" align="center">Búsqueda</h5>
+            <br />
+            <span>Los campos <strong><em>Nombre</em></strong> y <strong><em>Núm. documento</em></strong> son <strong><em>autocomplete</em></strong>, para realizar búsqueda de empleados, solo se ejecutará si escribe 3 o más caracteres. Si lo desea puede realizar la búsqueda por nombre y número de documento al mismo tiempo.</span>
+            <hr />
+
+            <div class="input-group col-md-12">
+                <label class="col-md-2">Nombre</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="txtSearchByName" />
+                </div>
+                <label class="col-md-2">Núm. documento</label>
+                <div class="col-md-4">
+                    <input type="number" class="form-control" id="txtSearchByDocNumber" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="tblEmployee" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Tipo Doc.</th>
+                            <th>Número Doc.</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Area</th>
+                            <th>SubArea</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Creación Empleado  -->
+<div class="modal fade" id="modalEmployee" tabindex="-1" role="dialog" aria-labelledby="modalEmployee"
+     aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title w-100" align="center"><label id="EmployeeTitle"></label></h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="input-group col-md-12">
+                        <label class="col-md-2">Tipo Doc.</label>
+                        <div class="col-md-4">
+                            <select class="form-control" id="ddlDocumentType">
+                                <option selected disabled value="-1">Seleccione</option>
+                            </select>
+                        </div>
+                        <label class="col-md-2">Nit</label>
+                        <div class="col-md-4">
+                            <input type="number" class="form-control" id="txtDocumentNumber" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group col-md-12">
+                        <label class="col-md-2">Nombre</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="txtName" />
+                        </div>
+                        <label class="col-md-2">Segundo Nombre</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="txtSecondName" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group col-md-12">
+                        <label class="col-md-2">Apellido</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="txtSurName" />
+                        </div>
+                        <label class="col-md-2">Segundo Apellido</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="txtSecondSurname" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group col-md-12">
+                        <label class="col-md-2">Área</label>
+                        <div class="col-md-4">
+                            <select class="form-control" id="ddlArea">
+                                <option selected disabled value="-1">Seleccione</option>
+                            </select>
+                        </div>
+                        <label class="col-md-2">SubÁrea</label>
+                        <div class="col-md-4">
+                            <select class="form-control" id="ddlSubArea">
+                                <option selected disabled value="-1">Seleccione</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-sm" id="btnSendEmployee">Enviar</button>
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" id="btnCloseModal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/Employee.js"></script>
+
